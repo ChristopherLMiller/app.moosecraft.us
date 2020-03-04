@@ -23,16 +23,29 @@ interface iServerStatus {
     text: string;
 }
 const ServerStatus:FC<iServerStatus> = ({url, text}) => {
-    const [status, setStatus] = useState('RED');
+    const [status, setStatus] = useState('grey');
 
     useEffect(() => {
+        // function to load the data for the status
         async function loadData() {
             // fetch the result of the status
             const res = await fetch(url);
             const data = await res.json();
             setStatus(data.status);
         }
+
+        // timer to run every 5 seconds to re-fetch the status
+        const timer = window.setInterval(() => {
+            loadData();
+        }, 5000);
+
+        // get the data loaded immediately for first render
         loadData();
+
+        // cleanup the effect
+        return () => {
+            window.clearInterval(timer);
+        };
     }, []);  
 
     return (
