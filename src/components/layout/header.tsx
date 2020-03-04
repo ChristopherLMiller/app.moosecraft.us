@@ -10,77 +10,78 @@ const Nav = styled.nav`
     top: 0;
     left: 0;
     background: var(--color-brown);
-    display: flex;
-    flex-direction: row;
+    display: grid;
+    grid-template-columns: 20% 1fr;
     justify-content: space-between;
     z-index: 99;
     box-shadow: var(--box-shadow);
 `;
 
-const LogoWrapper = styled.div``;
-const Logo = styled.div`
-    max-width: 345px;
-    padding: 15px;
-    height: auto;
+const LogoWrapper = styled.div`
 `;
-
+const Logo = styled.div`
+    padding: 15px;
+`;
+const SiteLogoImg = styled.img`
+    width: 100%;
+`;
 const MenuItems = styled.div`
     display: flex;
-`;
+    justify-content: flex-end;
+    align-items: center;
 
-const MenuItem = styled.span`
-    font-family: 'Lato', sans-serif;
-    font-size: 2.5rem;
-    text-transform: uppercase;
-    padding: 30px 20px;
-    font-weight: 200;
-    position: relative;
-    
-    ::after {
-        content: '\\A';
-        position: absolute;
-        bottom: 0;
-        left: 0;
-        width: 0%;
-        height: 5px;
-        background: var(--color-green-dark);
-        transition: all 0.25s;
-    }
-
-    :hover::after {
-        width: 100%;
-    }
-
-    a, span {
+    a {
+        font-family: 'Lato', sans-serif;
+        font-size: 2.25rem;
+        text-transform: uppercase;
+        padding: 0 10px;
+        font-weight: 200;
+        position: relative;
         text-decoration: none;
         color: var(--color-grey-light);
-        cursor: pointer;
-        position: relative;
-    }
-
-    :hover > div {
         display: flex;
+        height: 100%;
+        align-items: center;
+
+        ::after {
+            content: '\\A';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0%;
+            height: 5px;
+            background: var(--color-green-dark);
+            transition: all 0.25s;
+        }
+    
+        :hover::after {
+            width: 100%;
+        }
+
+        :hover > div {
+            top: 92px;
+            opacity: 1;
+        }
     }
 `;
 
 const SubMenu = styled.div`
     position: fixed;
-    display: none;
+    display: flex;
     flex-direction: row;
     background: var(--color-green-dark);
-    top: 92px;
+    top: -100px;
     justify-content: space-evenly;
     left: 0px;
     width: 100%;
+    z-index: -1;
+    opacity: 0;
+    transition: all 0.25s;
 `;
 
 const SubMenuItem = styled.span`
     margin: 0;
     padding: 15px;
-`;
-
-const SiteLogoImg = styled.img`
-    height: 60px;
 `;
 
 const Header = () => (
@@ -96,7 +97,7 @@ const Header = () => (
             {navItems.map(navItem => {
                 if (navItem.children) {
                     return (
-                        <MenuItem key={navItem.text}>
+                        <a>
                             <span>{navItem.text}</span>
                             <SubMenu>
                                 {navItem.children.map(item => (
@@ -107,15 +108,13 @@ const Header = () => (
                                     </SubMenuItem>
                                 ))}
                             </SubMenu>
-                        </MenuItem>
+                            </a>
                     )
                 }
                 return (
-                    <MenuItem key={navItem.text}>
-                        <Link href={navItem.link || '/'}>
-                            <a>{navItem.text}</a>
-                        </Link>
-                    </MenuItem>
+                    <Link key={navItem.text} href={navItem.link || '/'}>
+                        <a>{navItem.text}</a>
+                    </Link>
                 )
             })}
         </MenuItems>
