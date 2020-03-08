@@ -22,18 +22,14 @@ const RightCreeper = styled(GridItem)`
     }
 `;
 
-interface iErrorPage {
-    errorCode: number;
-}
-
-const ErrorPage:FunctionComponent<iErrorPage> = ({errorCode}) => (
+const ErrorPage:FunctionComponent = () => (
     <Page>
         <Grid columns={5} gap={30}>
             <LeftCreeper>
                 <img src="https://static.moosecraft.us/v2/img/creeper.png" />
             </LeftCreeper>
             <GridItem start="2" end="5">
-                <Card title={`${errorCode} Not Found`}>
+                <Card title={`404 Not Found`}>
                     <p>The page your are looking for can't seem to be found. Maybe those pesky creepers got into the computer again!</p>
                     <p>If you feel this is in error please report this to <a href="mailto:admin@moosecraft.us">admin@moosecraft.us</a></p>
                     <p>Additionally for reference the page requested was:</p>
