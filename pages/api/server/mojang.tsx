@@ -1,4 +1,5 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import fetch from 'isomorphic-unfetch';
 
 const minestat = require('../../../src/minestat');
 
