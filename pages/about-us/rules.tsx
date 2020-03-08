@@ -3,7 +3,7 @@ import { PageTitle } from "../../src/components/elements/PageTitle";
 import { Grid, Column } from "../../src/components/elements/Grid";
 import { Card } from "../../src/components/elements/Card";
 import { Accordian } from "../../src/components/elements/Accordian";
-import { ServerRules } from "../../data/server_rules";
+import { ServerRules } from "../../data/json/server_rules";
 
 const RulesPage = () => {    
     return (

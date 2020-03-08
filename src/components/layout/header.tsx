@@ -1,6 +1,6 @@
 import styled from "styled-components";
 import { SiteLogo } from "./SiteLogo";
-import { navItems } from '../../../data/json';
+import { navItems } from '../../../data/json/nav';
 import Link from "next/link";
 import { CLOUDINARY_URL } from "../../../config";
 
