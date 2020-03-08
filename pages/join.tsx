@@ -10,8 +10,11 @@ interface iImgDiv {
 }
 
 const ImgDiv = styled.div<iImgDiv>`
-    background: url(${props => props.img};
+    background: url(${props => props.img}) no-repeat center;
+    background-size: cover;
     height: 100%;
+    box-shadow: var(--box-shadow);
+    min-height: 150px;
 `;
 
 const JoinPage = () => (
@@ -24,7 +27,7 @@ const JoinPage = () => (
                 </Card>
             </GridItem>
             <GridItem><ImgDiv img="https://static.moosecraft.us/v2/img/slider/larry.png" /></GridItem>
-            <GridItem><ImgDiv img="https://static.moosecraft.us/v2/img/tree.png" /></GridItem>
+            <GridItem><ImgDiv img="https://static.moosecraft.us/v2/img/slider/larry.png" /></GridItem>
             <GridItem start="2" end="4">
                 <Card title="Benefits of Joining">
                     <p>What are some of the benefits of joining?</p>
