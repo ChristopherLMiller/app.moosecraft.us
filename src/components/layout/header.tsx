@@ -77,6 +77,11 @@ const SubMenu = styled.div`
     z-index: -1;
     opacity: 0;
     transition: all 0.25s;
+
+    a:after {
+        background: var(--color-brown);
+        bottom: -15px;
+    }
 `;
 
 const SubMenuItem = styled.span`
