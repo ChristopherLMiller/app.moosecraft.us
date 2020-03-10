@@ -7,7 +7,6 @@ export default ( req: NextApiRequest, res: NextApiResponse ) => {
     let status = 'grey';
 
     minestat.init(req.query?.address || 'localhost', req.query?.port || 25565, () => {
-        console.log(minestat.online);
         status = minestat.online ? 'green' : 'red';           
     }); 
     
