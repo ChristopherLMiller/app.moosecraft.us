@@ -16,6 +16,8 @@ export const GlobalStyles = createGlobalStyle`
     --color-brown: #584426;
     --box-shadow: 2px 2px 15px 0px rgba(50,50,50,1);
 
+    --max-width: 1600px;
+
     --modular1: 1.125;
     --modular2: 1.35;
 
