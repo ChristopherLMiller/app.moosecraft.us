@@ -3,6 +3,7 @@ import Link from "next/link";
 import { navItems } from '../data/json/nav';
 import { GlobalStyles } from "../styles/global";
 import { CLOUDINARY_URL } from "../config";
+import { Card } from "../src/components/elements/Card";
 
 const StyledHomePage = styled.div`
   height: 100vh;
@@ -68,6 +69,17 @@ const SubMenuItem = styled.div`
   display: none;
 `;
 
+const ComingSoon = styled.div`
+  position: absolute;
+  bottom: 5%;
+  font-size: 3rem;;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  color: var(--color-grey-light);
+  background: var(--color-brown);
+`;
+
 const Home = () => (
   <StyledHomePage>
     <GlobalStyles />
@@ -80,7 +92,13 @@ const Home = () => (
         </Link>
       </FlexBox>
     </Sign>
-    <NavWrapper>
+    <ComingSoon>
+      <p>Coming Soon...</p>
+    </ComingSoon>
+  </StyledHomePage>
+);
+
+/*    <NavWrapper>
       <Nav>
         {navItems.map(navItem => {
           if (navItem.children) {
@@ -108,7 +126,7 @@ const Home = () => (
     </Nav>
     </NavWrapper>
   </StyledHomePage>
-);
+);*/
 
 
 export default Home;
