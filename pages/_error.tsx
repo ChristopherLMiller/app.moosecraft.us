@@ -6,6 +6,7 @@ import { Card } from '../src/components/elements/Card';
 import styled from 'styled-components';
 import { NextPageContext } from 'next';
 import { FunctionComponent } from 'react';
+import { CLOUDINARY_URL } from '../config';
 
 const LeftCreeper = styled(GridItem)`
     text-align: right;
@@ -26,7 +27,7 @@ const ErrorPage:FunctionComponent = () => (
     <Page>
         <Grid columns={5} gap={30}>
             <LeftCreeper>
-                <img src="https://static.moosecraft.us/v2/img/creeper.png" />
+                <img src={`${CLOUDINARY_URL}/assets/creeper.png`} />
             </LeftCreeper>
             <GridItem start="2" end="5">
                 <Card title={`404 Not Found`}>
@@ -37,7 +38,7 @@ const ErrorPage:FunctionComponent = () => (
                 </Card>
             </GridItem>
             <RightCreeper>
-            <img src="https://static.moosecraft.us/v2/img/creeper.png" />
+            <img src={`${CLOUDINARY_URL}/assets/creeper.png`} />
             </RightCreeper>
         </Grid>
     </Page>

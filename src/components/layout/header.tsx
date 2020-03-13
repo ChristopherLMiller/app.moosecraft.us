@@ -94,7 +94,7 @@ const Header = () => (
         <LogoWrapper>
             <Logo>
                 <SiteLogo linkTo={'/'}>
-                    <SiteLogoImg src={`${CLOUDINARY_URL}/moosecraft/assets/logo.png`} />
+                    <SiteLogoImg src={`${CLOUDINARY_URL}/assets/logo.png`} />
                 </SiteLogo>
             </Logo>
         </LogoWrapper>

@@ -64,7 +64,7 @@ export const GlobalStyles = createGlobalStyle`
     box-sizing: border-box;
   }
   body {
-    background: url('${CLOUDINARY_URL}/moosecraft/assets/sky') no-repeat;
+    background: url('${CLOUDINARY_URL}/assets/sky.png') no-repeat;
     background-size: cover;
     background-attachment: fixed;
   }

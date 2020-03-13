@@ -1,1 +1,1 @@
-export const CLOUDINARY_URL="https://res.cloudinary.com/christopherleemiller/image/upload/v1582287338"
+export const CLOUDINARY_URL="https://res.cloudinary.com/christopherleemiller/image/upload/v1582287338/moosecraft"

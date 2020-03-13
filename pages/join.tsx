@@ -4,6 +4,7 @@ import { Card } from "../src/components/elements/Card";
 import { Grid, GridItem } from "../src/components/elements/Grid";
 import Link from "next/link";
 import styled from "styled-components";
+import { CLOUDINARY_URL } from "../config";
 
 interface iImgDiv {
     img: string;
@@ -26,8 +27,8 @@ const JoinPage = () => (
                     <p>Becoming a member of this community is pretty awesome if I say so myself. We are proud to remain a small and very friendly group of people who all enjoy Minecraft. We aren't a very strict place, but there are some basic rules to know and understand and you'll have a great time yourself.</p>
                 </Card>
             </GridItem>
-            <GridItem><ImgDiv img="https://static.moosecraft.us/v2/img/slider/larry.png" /></GridItem>
-            <GridItem><ImgDiv img="https://static.moosecraft.us/v2/img/slider/larry.png" /></GridItem>
+            <GridItem><ImgDiv img={`${CLOUDINARY_URL}/uploads/larry-small.png`} /></GridItem>
+            <GridItem><ImgDiv img={`${CLOUDINARY_URL}/uploads/larry-small.png`} /></GridItem>
             <GridItem start="2" end="4">
                 <Card title="Benefits of Joining">
                     <p>What are some of the benefits of joining?</p>

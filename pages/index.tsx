@@ -2,16 +2,17 @@ import styled from "styled-components"
 import Link from "next/link";
 import { navItems } from '../data/json/nav';
 import { GlobalStyles } from "../styles/global";
+import { CLOUDINARY_URL } from "../config";
 
 const StyledHomePage = styled.div`
   height: 100vh;
   width: 100vw;
-  background: url("https://static.moosecraft.us/v2/img/hero-home.png") no-repeat;
+  background: url("${CLOUDINARY_URL}/slider/harbor.png") no-repeat;
   background-size: cover;
 `;
 
 const Sign = styled.div`
-background: url("https://static.moosecraft.us/v2/img/sign.png") no-repeat;
+background: url("${CLOUDINARY_URL}/assets/sign.png") no-repeat;
 background-size: cover;
 left: 95px;
 padding-top: 425px;
@@ -74,7 +75,7 @@ const Home = () => (
       <FlexBox>
         <Link href="/">
           <a>
-            <ImgLink src="https://static.moosecraft.us/v2/img/logo.png" />
+            <ImgLink src={`${CLOUDINARY_URL}/assets/logo.png`} />
           </a>
         </Link>
       </FlexBox>
