@@ -6,7 +6,7 @@ export default ( req: NextApiRequest, res: NextApiResponse ) => {
     // defualt colors
     let status = 'grey';
 
-    minestat.init(req.query?.address || 'localhost', req.query?.port || 25565, () => {
+    minestat.init(req.query?.address || 'mc.moosecraft.us', req.query?.port || 25565, () => {
         status = minestat.online ? 'green' : 'red';           
     }); 
     
