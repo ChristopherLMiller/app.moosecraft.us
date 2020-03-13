@@ -1,16 +1,11 @@
 import { NextApiRequest, NextApiResponse } from 'next';
+import fetch from 'isomorphic-unfetch';
 
-const minestat = require('../../../src/utils/minestat');
+export default async ( req: NextApiRequest, res: NextApiResponse ) => {
+    const response = await fetch('https://api.mcsrvstat.us/2/mc.moosecraft.us');
+    const data = await response.json();
 
-export default ( req: NextApiRequest, res: NextApiResponse ) => {
-    // defualt colors
-    let status = 'grey';
-
-    minestat.init(req.query?.address || 'mc.moosecraft.us', req.query?.port || 25565, () => {
-        status = minestat.online ? 'green' : 'red';           
-    }); 
-    
     res.statusCode = 200;
-    res.setHeader('Content-Type', 'application/json');
-    res.end(JSON.stringify({status: status}));
+    res.setHeader('Content-Type', 'Application/Json');
+    res.end(JSON.stringify({status: data.online ? 'green' : 'red'}))
 }
