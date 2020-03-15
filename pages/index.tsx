@@ -78,6 +78,18 @@ const ComingSoon = styled.div`
   justify-content: center;
   color: var(--color-grey-light);
   background: var(--color-brown);
+
+  text-align: center;
+
+  a, p {
+    text-decoration: underline;
+    color: var(--color-white);
+    font-size: 12px;
+  }
+
+  h1 {
+    margin-bottom: 0;
+  }
 `;
 
 const Home = () => (
@@ -93,7 +105,10 @@ const Home = () => (
       </FlexBox>
     </Sign>
     <ComingSoon>
-      <p>Coming Soon...</p>
+      <div>
+      <h1>Coming Soon...</h1>
+      <p><a href="https://dynmap.moosecraft.us">Dynmap</a> | <a href="https://plan.moosecraft.us">Player Analytics</a></p>
+      </div>
     </ComingSoon>
   </StyledHomePage>
 );
