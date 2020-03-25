@@ -109,7 +109,7 @@ const MainNav = () => (
                     return (
                         <MenuItemWithSub key={navItem.text}>
                             <SubMenuTitle>{navItem.text}</SubMenuTitle>
-                            <SubMenu className="submenu">
+                            <SubMenu>
                             {navItem.children.map(item => {
                                 if (item.link.includes('http')) {
                                     return (
