@@ -23,6 +23,10 @@ top: -185px;
 transform: rotate(-13deg);
 transition: all 1s ease 0s;
 width: 552px;
+
+@media (max-width: 550px) {
+  display: none;
+}
 `;
 
 const FlexBox = styled.div`
@@ -84,7 +88,7 @@ const ComingSoon = styled.div`
   a, p {
     text-decoration: underline;
     color: var(--color-white);
-    font-size: 12px;
+    font-size: 16px;
   }
 
   h1 {
@@ -107,7 +111,7 @@ const Home = () => (
     <ComingSoon>
       <div>
       <h1>Coming Soon...</h1>
-      <p><a href="https://dynmap.moosecraft.us">Dynmap</a> | <a href="https://plan.moosecraft.us">Player Analytics</a></p>
+      <p><a href="https://dynmap.moosecraft.us">Dynmap</a> | <Link href="/about-us/ranks"><a>Server Ranks</a></Link> | <Link href="/about-us/history"><a>More Information</a></Link></p>
       </div>
     </ComingSoon>
   </StyledHomePage>
