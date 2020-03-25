@@ -32,9 +32,9 @@ export const navItems = [ {
         }, {
           "link" : "/stats/players",
           "text" : "Players"
-//        }, {
-//          "link" : "https://dynmap.moosecraft.us",
-//          "text" : "Live Map"
+        }, {
+          "link" : "https://dynmap.moosecraft.us",
+          "text" : "Live Map"
         } ],
         "text" : "Stats"
       }, {
