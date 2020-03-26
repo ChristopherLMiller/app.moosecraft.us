@@ -1,27 +1,35 @@
 import styled from "styled-components";
 import { navItems } from '../../../data/json/nav';
 import Link from "next/link";
-import { slugify } from "../../utils/functions";
-import { Fragment } from "react";
+import { useState, FunctionComponent } from 'react';
 
 const NavWrapper = styled.div`
-    display: flex;
-    justify-content: flex-end;
+    @media (min-width: 850px) {
+        display: flex;
+        justify-content: flex-end;
+    }
 `;
 
-const StyledNav = styled.nav`
-    display: flex;
-    flex-direction: row;
+interface iNav {
+    isMenuOpen: boolean;
+}
+const StyledNav = styled.nav<iNav>`
+    display: ${props => props.isMenuOpen ? 'flex' : 'none'};
+    flex-direction: column;
     justify-content: space-around;
     align-items: center;
     height: 100%;
+
+    @media (min-width: 850px) {
+        flex-direction: row;
+    }
 `;
 
 const MenuItem = styled.a`
     font-family: 'Lato', sans-serif;
     font-size: 2.25rem;
     text-transform: uppercase;
-    padding: 0 10px;
+    padding: 20px;
     font-weight: 200;
     text-decoration: none;
     color: var(--color-grey-light);
@@ -30,6 +38,8 @@ const MenuItem = styled.a`
     align-items: center;
     height: 100%;
     cursor: pointer;
+    width: 100%;
+    justify-content: center;
     
     ::after {
         content: '\\A';
@@ -45,6 +55,12 @@ const MenuItem = styled.a`
     :hover::after {
         width: 100%;
     }
+
+    @media (min-width: 850px) {
+        padding: 0 10px;
+        width: auto;
+        justify-content: initial;
+    }
 `;
 
 const MenuItemWithSub = styled.div`
@@ -59,7 +75,8 @@ const MenuItemWithSub = styled.div`
     align-items: center;
     height: 100%;
     cursor: pointer;
-    
+    flex-direction: column;
+
     ::after {
         content: '\\A';
         position: absolute;
@@ -78,18 +95,31 @@ const MenuItemWithSub = styled.div`
     :hover > div {
         display: flex;
     }
+
+    @media (min-width: 850px) {
+        flex-direction: row;
+    }
 `;
 
 const SubMenuTitle = styled.span`
-    padding: 0 10px;
+    padding: 20px;
+
+    @media (min-width: 850px) {
+        padding: 0 10px;
+    }
 `;
 
 const SubMenu = styled.div`
     display: none;
     min-width: 200px;
-    position: absolute;
+    width: 100%;
     top: 100%;
     flex-direction: column;
+
+    @media (min-width: 850px) {
+        position: absolute;
+        width: auto;
+    }
 `;
 
 const SubMenuItem = styled.a`
@@ -110,9 +140,33 @@ const SubMenuItem = styled.a`
     }
 `;
 
-const MainNav = () => (
+const MenuButtonWrapper = styled.div`
+    position: absolute;
+    right: 15px;
+    top: 15px;
+
+    @media (min-width: 850px) {
+        display: none;
+    }
+`;
+const MenuButton = styled.button`
+    background: var(--color-yellow);
+    color: var(--color-grey-light);
+    border: 1px solid var(--color-grey-light);
+    font-size: 3rem;
+`;
+
+const MainNav = () => {
+    const [isMenuOpen, setMenuOpen] = useState(true);
+
+    return (
     <NavWrapper>
-        <StyledNav>
+        <MenuButtonWrapper>
+        <MenuButton onClick={() => setMenuOpen(!isMenuOpen)}>
+            {isMenuOpen ? 'Close' : 'Menu'}
+        </MenuButton>
+        </MenuButtonWrapper>
+        <StyledNav isMenuOpen={isMenuOpen}>
             {navItems.map(navItem => {
                 // if nav item has children then don't create a link as its just a normal item
                 if (navItem.children) {
@@ -155,5 +209,6 @@ const MainNav = () => (
         </StyledNav>
     </NavWrapper>
 )
+}
 
 export { MainNav}

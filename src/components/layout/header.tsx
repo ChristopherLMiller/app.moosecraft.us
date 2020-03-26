@@ -14,7 +14,19 @@ const Wrapper = styled.div`
     box-shadow: var(--box-shadow);
     background: var(--color-brown);
     display: grid;
-    grid-template-columns: 350px 1fr;
+    grid-template-columns: 1fr;
+
+    @media (min-width: 850px) {
+        grid-template-columns: 200px 1fr;
+    }
+
+    @media (min-width: 950px) {
+        grid-template-columns: 300px 1fr;
+    }
+
+    @media (min-width: 1025px) {
+        grid-template-columns: 350px 1fr;
+    }
 `;
 
 const LogoWrapper = styled.div``;
@@ -24,7 +36,11 @@ const Logo = styled.div`
 `;
 
 const SiteLogoImg = styled.img`
-    width: 100%;
+    width: 200px;
+    
+    @media (min-width: 850px) {
+        width: 100%;
+    }
 `;
 
 const Header = () => (
