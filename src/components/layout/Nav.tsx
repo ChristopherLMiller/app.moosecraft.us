@@ -89,15 +89,25 @@ const SubMenu = styled.div`
     min-width: 200px;
     position: absolute;
     top: 100%;
-    background: var(--color-green);
     flex-direction: column;
-
 `;
 
 const SubMenuItem = styled.a`
     padding: 10px;
     color: var(--color-light-grey);
     text-decoration: none;
+    transition: all 0.25s;
+
+    :nth-child(odd) {
+        background: var(--color-green-dark);
+    }
+    :nth-child(even) {
+        background: var(--color-green);
+    }
+
+    :hover {
+        transform: translate3d(10px, 0, 0);
+    }
 `;
 
 const MainNav = () => (
