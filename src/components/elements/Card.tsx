@@ -2,14 +2,14 @@ import { ReactChildren, FunctionComponent } from "react"
 import styled from "styled-components"
 
 const StyledCard = styled.div`
-    background: var(--color-white);
+    background: var(--color-white-transparent);
     box-shadow: var(--box-shadow);
     height: min-content;
 `;
 
 const CardTitle = styled.h3`
-    color: var(--color-green-dark);
-    background: var(--color-grey-light);
+    color: var(--color-yellow);
+    background: var(--color-grey);
     letter-spacing: 2px;
     text-transform: uppercase;
     text-align: center;
@@ -22,6 +22,7 @@ const ContentBlock = styled.div`
     font-size: var(--p-responsive);
     display: inline-block;
     padding: 0 20px;
+    text-align: center;
 
     a {
         font-weight: bold;
@@ -35,6 +36,10 @@ const ContentBlock = styled.div`
     }
     h4 {
         margin: 15px 0;
+    }
+
+    li, ol {
+        text-align: left;
     }
 `;
 
