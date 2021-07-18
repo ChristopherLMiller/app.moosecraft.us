@@ -4,6 +4,9 @@ import { CLOUDINARY_URL } from '../config';
 export const GlobalStyles = createGlobalStyle`
   :root {
     --color-white: #FFFFFF;
+    --color-grey-transparent: rgba(105,100,29,.5);
+    --color-white-transparent: rgba(255,255,255,0.5);
+    --color-blue-opposite: hsla(398, 95%, 75%, 0.5);
     --color-grey: #595959;
     --color-grey-dark: #222222;
     --color-grey-light: #EEEEEE;
@@ -11,6 +14,7 @@ export const GlobalStyles = createGlobalStyle`
     --color-RED: #A20000;
     --color-green: #027500;
     --color-green-dark: #3e6b0a;
+    --color-green-dark-transparent: #3e6b0abf;
     --color-yellow: #d08c0f;
     --color-tan: #ecd6b3;
     --color-brown: #584426;
